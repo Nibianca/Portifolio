@@ -1,0 +1,230 @@
+/* styles.css */
+
+/* Definição de variáveis de cores */
+:root {
+    --cor-principal: #1b012e; /* 60% */
+    --cor-secundaria: 	rgb(50, 2, 85); /* 30% */
+    --cor-destaque: rgb(78, 5, 97); /* 10% */
+    --cor-texto: #ffffff;
+}
+
+/* Reset e estilos globais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(50, 2, 85, 0.80) url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-size: 16px;
+    color: var(--cor-texto);
+}
+
+header {
+    background: var(--cor-secundaria);
+    padding: 2px;
+    text-align: center;
+}
+
+.menu {
+    background-color: rgb(78, 5, 97, 0.30); /* Fundo mais escuro com transparência */
+    padding: 1px 1px;
+    color: white;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 100px;
+    border: 3px solid --cor-texto;
+    width: 150px;
+    height: 150px;   
+}
+
+.img {
+   position: absolute;
+    top: 0.5px;
+    right: 38px;
+    display: inline-block; /* Garante que a borda se ajuste à imagem */
+    padding: 1px; /* Espaço entre a imagem e a borda */
+    background-color: white; /* Cor da borda (branca) */
+}
+
+nav ul {
+    list-style: none;
+    padding: 10;
+    font-size: 18px;
+    margin-left: -70px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 40px;
+}
+
+nav ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+}
+
+/* Estilização de seções */
+section {
+    padding: 70px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    margin-top: -20px;
+    background-size: cover;
+    font-size: 35px;
+    color: var(--cor-texto);
+}
+
+.projetos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px; /* Espaço entre as caixas */
+}
+
+.projeto {
+    background: var(--cor-secundaria);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.projeto:hover {
+    transform: scale(1.05);
+}
+
+.projeto-img {
+    border-radius: 10px;
+    margin-top: 45px;
+    padding: 5px;
+    width: 100px;
+    height: 150px;
+}
+
+.projeto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projeto-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.projeto-info p {
+    font-size: 1rem;
+    color: #f6eaf7;
+}
+
+a {
+    color:rgba(192, 110, 255, 0.3);
+    font-weight: bold;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:50%;
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(138, 10, 150, 0.2);
+    width: 900px;
+    height: 800px;
+    text-align: left;
+    color: white;
+}
+
+/* Conteúdo do Modal */
+.modal-content {
+    position: relative;
+}
+
+/* Botão para fechar */
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+pre {
+    background: var(--cor-destaque);
+    padding: 30px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+
+.projetos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .projeto {
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo verticalmente */
+    align-items: center; /* Centraliza os elementos no card */
+    background: var(--cor-secundaria); /* Cor do fundo do card */
+    border-radius: 10px;
+    width: 300px; /* Mantém o card com tamanho fixo */
+    height: auto; /* Ajusta a altura dinamicamente */
+    padding: 15px;
+    gap: 10px; /* Espaço entre os elementos */
+    transition: transform 0.3s;
+}
+  
+.carousel {
+    width: 100%; /* O carrossel ocupa toda a largura do card */
+    height: auto;
+    aspect-ratio: 9 / 16; /* Proporção de celular */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide img {
+    width: 80%; /* Imagem ajustada à largura do carrossel */
+    height: auto; 
+    object-fit: contain; /* Ajusta a imagem sem cortar nem distorcer */
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 85px;
+    width: 100%; /* Faz com que o footer ocupe toda a largura da janela */
+    position: fixed; /* Posiciona o footer de forma fixa */
+    bottom: 0; /* Posiciona o footer no fundo da janela */
+    
+    color: var(--cor-principal);  
+    background-color: rgba(50, 2, 85, 0.30);
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+.footer-container ul a {
+    text-decoration: underline;
+    color: var(--cor-texto);        /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */    
+}
+
+.footer-container ul li a {
+    color: var(--cor-destaque);        /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+}

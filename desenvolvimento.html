@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <img src="perfil.jpg" class="img">
+        <h2>Nicole Bianca Cajueiro Eugênio</h2>
+        <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="desenvolvimento.html">Desenvolvimento</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+        </nav>
+        </div>        
+    </header>
+
+
+    <!-- Seção de projetos principais -->
+    <section>
+        <h1>Projetos de Desenvolvimento de Sistemas</h1>
+        <div class="projetos-container">
+            <div class="projeto">
+                <img src="relogio.png" alt="Imagem do Projeto Conversor" class="projeto-img">
+                <div class="projeto-info">
+                    <h3>Conversor de Horas para Minutos e Segundos</h3>
+                    <p>Converte horas em minutos e segundos de forma simples, destacando o uso de POO em Dart.</p>
+                    <p><a href="#" onclick="abrirModal('modal1')">Clique aqui</a> para ver o código e mais detalhes.</p>
+                </div>                
+            </div>
+
+            <!--Modal1-->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
+                    <h2>Conversor de Horas para Minutos e Segundos</h2>
+                    <p>Copie o código e teste no DartPad! <a href="https://dartpad.dev/">DartPad.dev</a></p>
+                    <pre>
+                        class Horas {
+                            int _horario = 0, _minutos = 0, _segundos = 0;
+                          
+                            // Setter
+                            set horario(int novoHorario) => _horario = novoHorario;
+                          
+                            // Getter
+                            int get horario => _horario;
+                            int get minutos => _minutos;
+                            int get segundos => _segundos;
+                          
+                            void converterEmMinutos() {
+                              this._minutos = this._horario * 60;
+                            }
+                          
+                            void converterEmSegundos() {
+                              this._segundos = this._horario * 60 * 60;
+                            }
+                          }
+                          
+                          void main() {
+                            var horas = Horas();
+                          
+                            horas.horario = 3;
+                            horas.converterEmMinutos();
+                            horas.converterEmSegundos();
+                          
+                            print("Hora: ${horas.horario}, Em minutos: ${horas.minutos}");
+                            print("Hora: ${horas.horario}, Em segundos: ${horas.segundos}");
+                          }
+                    </pre>
+                </div>
+            </div>
+
+
+            <div class="projeto">
+                <img src="calculadoridade.png" alt="Imagem do Projeto Calculadora de Idade" class="projeto-img">
+                <div class="projeto-info">
+                    <h3>Calculadora de Idade Aproximada</h3>
+                    <p>Calcula a idade aproximada com base no ano de nascimento informado, utilizando POO em Dart.</p>
+                    <p><a href="#" onclick="abrirModal('modal2')">Clique aqui</a> para ver o código e mais detalhes.</p>
+                </div>                
+            </div>
+
+            <!--Modal2-->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
+                    <h2>Calculadora de Idade Aproximada</h2>
+                    <p>Copie o código e teste no DartPad! <a href="https://dartpad.dev/">DartPad.dev</a></p>
+                    <pre>
+                        class Idade{
+                            double _diaDoNascimento=0,_anoAtual=0,_idadeAproximada=0;
+                            
+                          // Getter
+                            double get diaDoNascimento => _diaDoNascimento;
+                            
+                          // Setter
+                            set diaDoNascimento(double novoDiaDoNascimento) => _diaDoNascimento=novoDiaDoNascimento;
+                            
+                          // Getter
+                            double get anoAtual => _anoAtual;
+                            
+                          // Setter
+                            set anoAtual(double novoAnoAtual) => _anoAtual=novoAnoAtual; 
+                            
+                          // Getter
+                            double get idadeAproximada => _idadeAproximada;
+                          
+                          void calculoDaIdade(){
+                            this._idadeAproximada = this._anoAtual - this._diaDoNascimento;
+                           }
+                          }
+                          
+                          void main(){
+                            var idade=Idade();
+                            
+                            idade.diaDoNascimento = 2004;
+                            idade.anoAtual = 2025;
+                            idade.calculoDaIdade();
+                            
+                            print("Seu ano de nascimento é: ${idade.diaDoNascimento}");
+                            print("O ano atual que está é: ${idade.anoAtual}");
+                            print("Aproximadamente sua idade é: ${idade.idadeAproximada}");
+                           }
+                    </pre>
+                </div>
+            </div>
+
+            <div class="projeto">
+                    <img src="calculadorproduto.png" alt="Imagem do Projeto 2" class="projeto-img">
+                    <div class="projeto-info">
+                        <h3>Calculadora de Valor de Produto</h3>
+                        <p>Um sistema para calcular o valor de produtos baseado na quantidade solicitada, implementado com POO em Dart.</p>
+                        <p><a href="#" onclick="abrirModal('modal3')">Clique aqui</a> para ver o código e mais detalhes.</p>
+                    </div>
+            </div>
+            <!--Modal3-->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <span class="fechar" onclick="fecharModal('modal3')">&times;</span>
+                    <h2>Calculadora de Valor de Produto</h2>
+                    <p>Copie o código e teste no DartPad! <a href="https://dartpad.dev/">DartPad.dev</a></p>
+                    <pre>
+                        class Produto {
+                            double _valorProduto = 0;
+                            int _quantidadeProduto = 0;
+                          
+                            //Getter
+                            double get valorProduto => _valorProduto;
+                          
+                            //Setter
+                            set valorProduto(double novoValorProduto) => _valorProduto = novoValorProduto;
+                          
+                            //Getter
+                            int get quantidadeProduto => _quantidadeProduto;
+                          
+                            //Setter
+                            set quantidadeProduto(int novoQuantidadeProduto) =>
+                                _quantidadeProduto = novoQuantidadeProduto;
+                          
+                            //Calculo do produto em função da quantidade
+                            double calculo() {
+                              return (this._valorProduto * this._quantidadeProduto);
+                            }
+                          }
+                          
+                          void main() {
+                            var produto = Produto();
+                            double resultado = 0;
+                          
+                            produto._valorProduto = 100;
+                            produto._quantidadeProduto = 2;
+                            resultado = produto.calculo();
+                          
+                            print("Valor do produto: ${produto._valorProduto}");
+                            print("Quant. do produto: ${produto._quantidadeProduto}");
+                            print("Total a pagar: ${resultado}");
+                          }
+                    </pre>
+                </div>
+            </div>
+
+
+            <div class="projeto">
+                <img src="calculador.png" alt="Imagem do Projeto Calculadora de Salário" class="projeto-img">
+                <div class="projeto-info">
+                    <h3>Calculadora de Salário com Descontos e Acréscimos</h3>
+                    <p>Calcula o salário final com base em horas extras e faltas, utilizando POO em Dart.</p>
+                    <p><a href="#" onclick="abrirModal('modal4')">Clique aqui</a> para ver o código e mais detalhes.</p>
+                </div>
+            </div>
+            <!--Modal3-->
+            <div id="modal4" class="modal">
+                <div class="modal-content">
+                    <span class="fechar" onclick="fecharModal('modal4')">&times;</span>
+                    <h2>Calculadora de Salário com Descontos e Acréscimos</h2>
+                    <p>Copie o código e teste no DartPad! <a href="https://dartpad.dev/">DartPad.dev</a></p>
+                    <pre>
+                        class SalarioFinal {
+                            double _salarioBase = 2000;
+                            double _valorHora = 9;
+                            int _horasExtra = 0;
+                            int _faltas = 0;
+                          
+                            // Getter
+                            double get salarioBase => _salarioBase;
+                          
+                            // Getter
+                            double get valorHora => _valorHora;
+                          
+                            // Getter
+                            int get horasExtra => _horasExtra;
+                          
+                            // Setter
+                            set horasExtra(int novoHorasExtra) => _horasExtra = novoHorasExtra;
+                          
+                            // Getter
+                            int get faltas => _faltas;
+                          
+                            // Setter
+                            set faltas(int novoFaltas) => _faltas = novoFaltas;
+                          
+                            // Calculos
+                            // Salário Base
+                            double salarioBruto() {
+                              return _salarioBase;
+                            }
+                          
+                            // Calculo do acrescimo
+                            double calculoAcrescimo() {
+                              return _horasExtra * _valorHora;
+                            }
+                          
+                            // Calculo do Desconto
+                            double calculoDesconto() {
+                              return _faltas * _valorHora;
+                            }
+                          
+                            // Calculo do Salário Liquido
+                            double salarioLiquido() {
+                              return _salarioBase + calculoAcrescimo() - calculoDesconto();
+                            }
+                          }
+                          
+                          void main() {
+                            var salarioFinal = SalarioFinal();
+                          
+                            salarioFinal.horasExtra = 10;
+                            salarioFinal.faltas = 5;
+                          
+                            print("Salário Bruto: ${salarioFinal.salarioBruto()}");
+                            print("Salário Liquido: ${salarioFinal.salarioLiquido()}");
+                            print("Valor Desconto: ${salarioFinal.calculoDesconto()}");
+                            print("Valor Acréscimo: ${salarioFinal.calculoAcrescimo()}");
+                          }
+                    </pre>                
+                
+
+            </div>
+        </div>
+        </section> 
+
+        <footer id="footer">
+            <div class="footer-container">
+                <ul>
+                    Email: <a href="nicolebiancacajueiro123@gmail.com">nicolebiancacajueiro123@gmail.com</a>
+                    <br>
+                    LinkedIn: <a href="https://br.linkedin.com/in/nicole-cajueiro-eugenio" target="_blank">www.linkedin.com/in/nicole-cajueiro-eugenio</a>
+                </ul>
+            </div>
+        </footer>        
+
+    <script src="script_ds.js"></script>
+</body>
+</html>
+
